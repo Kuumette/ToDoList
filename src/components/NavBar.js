@@ -7,26 +7,27 @@ import {
     FaPlusSquare, 
     FaTrashAlt 
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 //Constante de mon footer 
 const NavBar = () => (
-    <footer
-    className='d-flex justify-content-between bg-secondary p-3'
-    id='mainFooter'
->
+<footer className='d-flex justify-content-between bg-secondary p-3' id='mainFooter'>
     <div className='btn-group'>
-        <a href='/' className='btn btn-outline-dark bg-light'>
+        {/* <a href='/' className='btn btn-outline-dark bg-light'>*/}
+        <Link to='/' className='btn btn-outline-dark bg-light'>
             {/* Ajout le l'icon */}
             <FaListAlt />
-        </a>
-        <a href='#' className='btn btn-outline-dark bg-light'>
+        {/* </a> */}
+        </Link>
+        <Link to='/completed' className='btn btn-outline-dark bg-light'>
             {/* Ajout le l'icon */}
             <FaCheckSquare />
-        </a>
-        <a href='add-task' className='btn btn-outline-dark bg-light'>
+        </Link>
+        <Link to='add-task' className='btn btn-outline-dark bg-light'>
             {/* Ajout le l'icon */}
             <FaPlusSquare />
-        </a>
+        </Link>
     </div>
     <button className="btn btn-outline-dark bg-light"> 
         {/* Ajout le l'icon */}

@@ -23,7 +23,7 @@ class App extends Component {
                         {/* Recupere l'element AddTask */}
                         <Route path="/add-task" component={AddTask} />
                         {/* Récupere l'element ToDoList */}
-                        <Route path="/" component={ToDoList} />
+                        <Route path="/:filter?" component={ToDoList} />
                     </Switch>
                     {/* Affiche l'element NavBar */}
                     <NavBar />

@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 //Import de App Ou se trouve tout mais element
 import App from "./components/App";
+import "./css/ToDo.css";
 
 //place mon App dans ma div Root de mon html (dans public)
 ReactDOM.render(<App />, document.getElementById("root"));
