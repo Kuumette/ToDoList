@@ -9,6 +9,8 @@ import {
     Switch,
     Route
   } from "react-router-dom";
+import initialData from "../initialData";
+
 
 //Class App qui retourn ...
 class App extends Component {
@@ -23,7 +25,9 @@ class App extends Component {
                         {/* Recupere l'element AddTask */}
                         <Route path="/add-task" component={AddTask} />
                         {/* Récupere l'element ToDoList */}
-                        <Route path="/:filter?" component={ToDoList} />
+                        {/* <Route path="/:filter?" component={ToDoList} /> */}
+                        {/* rajouter des props a la place de component metre render et pour faire comme component faire {...props}*/}
+                        <Route path="/:filter?" render={(props) => <ToDoList {...props} tasks={initialData} />} />
                     </Switch>
                     {/* Affiche l'element NavBar */}
                     <NavBar />
