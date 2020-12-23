@@ -4,7 +4,7 @@ class AddTask extends Component {
 	render() {
 		return (
 			<section>
-				<h1 className='m-3'>Nouvelle tâche</h1>
+				<h1 className='m-3'>Ajout d'une nouvelle comppétence</h1>
 				<div className='card mx-3'>
 					<form className='card-body' onSubmit={(e) => this.handleSubmit(e)}>
 						<div className='form-group'>

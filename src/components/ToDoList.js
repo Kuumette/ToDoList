@@ -2,7 +2,7 @@
 import React from 'react';
 import ToDo from './ToDo';
 
-const ToDoList = ({ tasks, match }) => {
+const ToDoList = ({ tasks, match, onToggleCompleted }) => {
     // variable 
     let filteredTasks;
 
@@ -31,13 +31,13 @@ const ToDoList = ({ tasks, match }) => {
 
         return (
             <>
-                <h1 className='m-3'>Liste de tâches</h1>
+                <h1 className='m-3'>Compétences professionnelles</h1>
                 <ul className='list-group m-3'>
                     {/* pour du js dans du jsx */}
                     {
                         // recup 1 tache revoie a ToDo une 1 avec son nom rajout de la proprieter de son id (le .map la meme chose qu'un foreach)
                         filteredTasks.map((task) => 
-                            (<ToDo task={task.name} key={task.id}/>)
+                            (<ToDo task={task} key={task.id} onToggleCompleted={onToggleCompleted}/>)
                         )
                     }
                 </ul>

@@ -14,6 +14,22 @@ import initialData from "../initialData";
 
 //Class App qui retourn ...
 class App extends Component {
+
+    state = {
+        tasks: initialData,
+    };
+
+    onToggleCompleted = (taskId) => {
+        let taskToUpdate = this.state.tasks.find((task) => task.id === taskId);
+        taskToUpdate.completed = !taskToUpdate.completed;
+
+        this.setState((prevState) => (
+            prevState.tasks.map((task) => {
+                return task.id === taskId ? taskToUpdate : task;
+            })
+        ))
+    };
+
     // Methode render obigatoire 
     render () {
         return (
@@ -27,7 +43,7 @@ class App extends Component {
                         {/* Récupere l'element ToDoList */}
                         {/* <Route path="/:filter?" component={ToDoList} /> */}
                         {/* rajouter des props a la place de component metre render et pour faire comme component faire {...props}*/}
-                        <Route path="/:filter?" render={(props) => <ToDoList {...props} tasks={initialData} />} />
+                        <Route path="/:filter?" render={(props) => <ToDoList {...props} tasks={this.state.tasks} onToggleCompleted={this.onToggleCompleted} />} />
                     </Switch>
                     {/* Affiche l'element NavBar */}
                     <NavBar />
