@@ -24,7 +24,7 @@ const NavBar = () => (
             {/* Ajout le l'icon */}
             <FaCheckSquare />
         </Link>
-        <Link to='add-task' className='btn btn-outline-dark bg-light'>
+        <Link to='/add-task' className='btn btn-outline-dark bg-light'>
             {/* Ajout le l'icon */}
             <FaPlusSquare />
         </Link>
